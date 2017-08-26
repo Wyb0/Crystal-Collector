@@ -10,35 +10,50 @@ $(document).ready(function() {
         console.log(randomNum);
 
     //generate random number for crystals
+        //note *couldn't use two classes in html for crystals
     var red = Math.floor((Math.random()) * 11 + 1);
         $(".redcrystal").val(red);
-        console.log(red);
+        var redadd = parseInt($(red));
+        console.log(red)
     var blue = Math.floor((Math.random()) * 11 + 1);
         $(".bluecrystal").val(blue);
+        var blueadd = parseInt($(blue));
         console.log(blue);
     var green = Math.floor((Math.random()) * 11 + 1);
         $(".greencrystal").val(green);
+        var greenadd = parseInt($(green));
         console.log(green);
     var purple = Math.floor((Math.random()) * 11 + 1);
         $(".purplecrystal").val(purple);
+        var purpleadd = parseInt($(purple));
         console.log(purple);
 
 
     //generate on click event for crystals
+        //note *couldn't replace same line in html, had to seperate
     $(".redcrystal").on("click", function () {
-        $(".totalscore").append(red)
-        console.log();
+        var redfinal = score += red;
+        $(".totalscore").html(redfinal);
     })
     $(".bluecrystal").on("click", function () {
-        $(".totalscore").append(blue)
+        var bluefinal = score += blue;
+        $(".totalscore").html(bluefinal);
     })
     $(".greencrystal").on("click", function () {
-        $(".totalscore").append(green)
+        var greenfinal = score += green;
+        $(".totalscore").html(greenfinal);
     })
     $(".purplecrystal").on("click", function () {
-        $(".totalscore").append(purple)
+        var purplefinal = score += purple;
+        $(".totalscore").html(purplefinal);
     })
-});
+
+    //if else statements to define win-loss
+    //if (".totalscore" == randomNum) {
+
+    });
+
+
 
 
 
