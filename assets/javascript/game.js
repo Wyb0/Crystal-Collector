@@ -1,9 +1,10 @@
-//set variables
-var wins = 0;
-var losses = 0;
-var score = 0;
+ //set variables
+ var wins = 0;
+ var losses = 0;
+ var score = 0;
 
 $(document).ready(function() {
+    
     //generate random number for guessing
     var randomNum = Math.floor((Math.random()) * 101 + 19);
         $(".randomnumber").append(randomNum);
@@ -31,6 +32,8 @@ $(document).ready(function() {
 
     //generate on click event for crystals
         //note *couldn't replace same line in html, had to seperate
+    
+        
     $(".redcrystal").on("click", function () {
         var redfinal = score += red;
         $(".totalscore").html(redfinal);
@@ -47,11 +50,21 @@ $(document).ready(function() {
         var purplefinal = score += purple;
         $(".totalscore").html(purplefinal);
     })
+    
 
+    console.log(score)
+    console.log(randomNum)
     //if else statements to define win-loss
-    //if (".totalscore" == randomNum) {
+    if (score == randomNum) {
+        wins++;
+        $(".winstally").html(wins);
+    }
+    if (score > randomNum) {
+        losses++;
+        $(".lossestally").html(losses);
+    }
 
-    });
+});
 
 
 
